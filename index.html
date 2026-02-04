@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XI TKJ 3</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+/* SCROLLBAR HILANG */
+html,body{
+  overflow-x:hidden;
+  scrollbar-width:none;
+  scroll-behavior:smooth;
+}
+body::-webkit-scrollbar{display:none}
+
+/* BODY */
+body{
+  background:#f6f1eb;
+  color:#2e2e2e;
+}
+
+/* PAGE */
+.page{
+  min-height:100vh;
+  padding-bottom:40px;
+  animation:fadePage .6s ease;
+}
+.hidden{display:none}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:50px 20px;
+}
+.hero img{
+  width:95px;height:95px;border-radius:50%;
+  margin-bottom:15px;
+  border:4px solid #8d6e63;
+}
+.hero h1{
+  font-size:36px;
+  letter-spacing:3px;
+  color:#3b2f2f;
+}
+
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:20px;
+}
+.card{
+  background:#fffaf5;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  font-weight:600;
+  color:#3b2f2f;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-5px)}
+
+/* SECTION */
+.section{
+  padding:20px;
+}
+.section h2{
+  text-align:center;
+  margin-bottom:15px;
+  letter-spacing:2px;
+  color:#3b2f2f;
+}
+
+/* BOX */
+.box{
+  background:#fffaf5;
+  border-radius:20px;
+  padding:15px;
+  margin:10px auto;
+  text-align:center;
+  width:85%;
+  box-shadow:0 8px 20px rgba(0,0,0,.07);
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s ease;
+}
+.box.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+}
+
+/* PIKET */
+.piket-slider{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.piket-slider::-webkit-scrollbar{display:none}
+.piket-day{
+  min-width:85%;
+  background:#fffaf5;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.07);
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s ease;
+}
+.piket-day.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.piket-day h3{
+  text-align:center;
+  margin-bottom:10px;
+  color:#3b2f2f;
+}
+.piket-day li{
+  list-style:none;
+  text-align:center;
+  padding:6px 0;
+  border-bottom:1px solid #e6dcd2;
+}
+
+/* ===== GALLERY ===== */
+.gallery-page h1{
+  font-size:40px;
+  text-align:center;
+  margin:40px 0 10px;
+  color:#3b2f2f;
+}
+.gallery-page p{
+  text-align:center;
+  color:#555;
+  margin-bottom:30px;
+}
+
+/* STORY */
+.story{
+  width:90%;
+  margin:0 auto 30px;
+  background:#fffaf5;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease;
+}
+.story.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.story img{
+  width:100%;
+  display:block;
+  transition:.4s ease;
+}
+.story:hover img{transform:scale(1.03)}
+.story .text{padding:20px}
+.story h3{color:#3b2f2f;margin-bottom:8px}
+
+/* BUTTON */
+.back{text-align:center;margin-top:30px}
+.back button{
+  background:#3b2f2f;
+  border:none;
+  color:white;
+  padding:12px 35px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+/* PAGE ANIM */
+@keyframes fadePage{
+  from{opacity:0}
+  to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div class="page" id="home">
+  <div class="hero">
+    <img src="gambar/logo kelas hd.jpeg">
+    <h1>XI TKJ 1</h1>
+  </div>
+
+  <div class="menu">
+    <div class="card" onclick="openGallery()">Gallery</div>
+    <div class="card" onclick="openIG()">Class Instagram</div>
+  </div>
+
+  <div class="section">
+    <h2>Structure</h2>
+    <div class="box"><b>WALI KELAS</b><br>Herry pandera</div>
+    <div class="row">
+      <div class="box"><b>KETUA</b><br>M. Mulki</div>
+    </div>
+    <div class="row">
+      <div class="box"><b>SEKERTARIS</b><br>Alifa</div>
+      <div class="box"><b>BENDAHARA</b><br>Syifa</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Jadwal Piket</h2>
+    <div class="piket-slider">
+      <div class="piket-day">
+        <h3>Senin</h3>
+        <ul>
+          <li>reza</li>
+          <li>dani</li>
+          <li>sesilia</li>
+          <li>putra</li>
+          <li>kuswanto</li>
+          <li>grasela</li>
+          <li>nabila</li>
+        </ul>
+      </div>
+      <div class="piket-day">
+        <h3>Selasa</h3>
+        <ul>
+         <li>devita</li>
+         <li>syahrul</li>
+         <li>M.syawal</li>
+         <li>M.zakaria</li>
+         <li>M.mulki</li>
+        </ul>
+      </div>
+
+      <div class="piket-day">
+        <h3>rabu</h3>
+        <ul>
+         <li>alifah</li>
+         <li>apriliya</li>
+         <li>winda</li>
+         <li>adrian</li>
+         <li>ipan</li>
+        </ul>
+      </div>
+
+      <div class="piket-day">
+        <h3>kamis</h3>
+        <ul>
+         <li>nazwa</li>
+         <li>farhan</li>
+         <li>alvian</li>
+         <li>rafael</li>
+         <li>gegrorius</li>
+        </ul>
+      </div>
+
+      <div class="piket-day">
+        <h3>jumat</h3>
+        <ul>
+         <li>davit</li>
+         <li>syifa</li>
+         <li>lionel</li>
+         <li>sesan</li>
+         <li>marlon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="page gallery-page hidden" id="gallery">
+  <h1>Story of TKJ</h1>
+  <p>Moments · Memories · TKJ </p>
+
+  <div class="story">
+    <img src="gambar/hbd.jpeg">
+    <div class="text">
+      <h3>12/10/2025</h3>
+      <p>Mat ultah bendahara.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/pkwr.jpeg">
+    <div class="text">
+      <h3>9/10/2025</h3>
+      <p>kerja malam-malam demi nilai huftt...</p>
+    </div>
+  </div>
+  
+  <div class="story">
+    <img src="gambar/pasukan jomok.jpeg">
+    <div class="text">
+      <h3>9/10/2025</h3>
+      <p>Yang satu ini rada rada.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/mangrove2.jpg">
+    <div class="text">
+      <h3>28/9/2025</h3>
+      <p>Healing bro capek kerja tugas.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/hari guru 3.jpg">
+    <div class="text">
+      <h3>25/11/2025</h3>
+      <p>Satu kelas, satu cerita.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/hari guru 2.jpg">
+    <div class="text">
+      <h3>25/11/2025</h3>
+      <p>Ibu guru yang paling baik</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/hari guru.jpg">
+    <div class="text">
+      <h3>25/11/2025</h3>
+      <p>Satu kelas, satu cerita.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <img src="gambar/pak guru.jpg">
+    <div class="text">
+      <h3>25/11/2025</h3>
+      <p>My teacher is a hero.</p>
+    </div>
+  </div>
+
+  <div class="back">
+    <button onclick="backHome()">Back</button>
+  </div>
+</div>
+
+<script>
+function openGallery(){
+  home.classList.add("hidden");
+  gallery.classList.remove("hidden");
+  scrollTo(0,0);
+}
+function backHome(){
+  gallery.classList.add("hidden");
+  home.classList.remove("hidden");
+  scrollTo(0,0);
+}
+function openIG(){
+  window.open("https://instagram.com/netzone_xl_1_","_blank");
+}
+
+/* OBSERVER STABIL */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+    }
+  });
+},{threshold:.3});
+
+document.querySelectorAll(".box,.piket-day,.story")
+.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
